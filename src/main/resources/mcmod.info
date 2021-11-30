@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "${modid}",
+    "name": "${name}",
+    "description": "This mod removes Minecraft's camera hurt shake upon being hit.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "Github.com/Scherso"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
