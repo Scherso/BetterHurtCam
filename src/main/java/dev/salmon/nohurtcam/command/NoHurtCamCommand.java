@@ -1,5 +1,6 @@
 package dev.salmon.nohurtcam.command;
 
+
 import dev.salmon.nohurtcam.NoHurtCam;
 import gg.essential.api.EssentialAPI;
 import gg.essential.api.commands.Command;
