@@ -8,12 +8,25 @@ import gg.essential.vigilance.data.PropertyType;
 import java.io.File;
 
 public class Config extends Vigilant {
+
     @Property(
-            type = PropertyType.SWITCH, name = "Hurt Animation Remover",
-            description = "Removes the shake animation that happens upon being hurt or hit.",
-            category = "General"
+            type = PropertyType.SLIDER, name = "Adjust Hurt Camera Effect",
+            description = "Adjust Minecraft's hurt animation.",
+            category = "General",
+            min = 0,
+            max = 100
     )
-    public static boolean noHurtCam = true;
+    public static int adjustHurtCam = 14;
+
+    @Property(
+            type = PropertyType.SLIDER, name = "Adjust Hurt Camera Effect in Lava",
+            description = "Adjust Minecraft's hurt animation while in lava.",
+            category = "General",
+            subcategory = "Other",
+            min = 0,
+            max = 100
+    )
+    public static int adjustHurtCamInLava = 14;
 
     public Config() {
         super(new File(NoHurtCam.modDir, "nohurtcam.toml"), "NoHurtCam");
