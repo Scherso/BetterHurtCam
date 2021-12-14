@@ -1,4 +1,4 @@
 # Hurt Animation Remover
 
-A mod which removes the annoying animation that is executed upon being hit in Minecraft.
+A mod which allows the user to adjust Minecraft's hurt animation on a slider.
 
