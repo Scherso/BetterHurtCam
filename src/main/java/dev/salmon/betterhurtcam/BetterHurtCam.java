@@ -1,9 +1,9 @@
-package dev.salmon.nohurtcam;
+package dev.salmon.betterhurtcam;
 
-import dev.salmon.nohurtcam.command.NoHurtCamCommand;
-import dev.salmon.nohurtcam.config.Config;
-import dev.salmon.nohurtcam.utils.SkyblockUtils;
-import dev.salmon.nohurtcam.utils.Updater;
+import dev.salmon.betterhurtcam.command.BetterHurtCamCommand;
+import dev.salmon.betterhurtcam.config.Config;
+import dev.salmon.betterhurtcam.utils.SkyblockUtils;
+import dev.salmon.betterhurtcam.utils.Updater;
 import gg.essential.api.EssentialAPI;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -16,8 +16,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import java.io.File;
 
-@Mod(name = NoHurtCam.NAME, version = NoHurtCam.VER, modid = NoHurtCam.ID)
-public class NoHurtCam {
+@Mod(name = BetterHurtCam.NAME, version = BetterHurtCam.VER, modid = BetterHurtCam.ID)
+public class BetterHurtCam {
     public static final String NAME = "@NAME@", VER = "@VER@", ID = "@ID@";
     public static File jarFile;
     public static File modDir = new File(new File(Minecraft.getMinecraft().mcDataDir, "W-OVERFLOW"), NAME);
@@ -74,7 +74,7 @@ public class NoHurtCam {
 
     @Mod.EventHandler
     protected void onInitialization(FMLInitializationEvent event) {
-        new NoHurtCamCommand().register();
+        new BetterHurtCamCommand().register();
         config = new Config();
         config.preload();
         MinecraftForge.EVENT_BUS.register(new SkyblockUtils());

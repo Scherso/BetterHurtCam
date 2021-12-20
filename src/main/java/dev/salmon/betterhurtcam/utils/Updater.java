@@ -1,9 +1,9 @@
-package dev.salmon.nohurtcam.utils;
+package dev.salmon.betterhurtcam.utils;
 
 import com.google.gson.JsonObject;
-import dev.salmon.nohurtcam.NoHurtCam;
-import dev.salmon.nohurtcam.config.Config;
-import dev.salmon.nohurtcam.gui.DownloadGui;
+import dev.salmon.betterhurtcam.BetterHurtCam;
+import dev.salmon.betterhurtcam.config.Config;
+import dev.salmon.betterhurtcam.gui.DownloadGui;
 import gg.essential.api.EssentialAPI;
 import gg.essential.api.utils.Multithreading;
 import gg.essential.api.utils.WebUtil;
@@ -25,9 +25,9 @@ public class Updater {
     public static void update() {
         Multithreading.runAsync(() -> {
             try {
-                JsonObject latestRelease = WebUtil.fetchJSON("https://api.github.com/repos/W-OVERFLOW/" + NoHurtCam.ID + "/releases/latest").getObject();
+                JsonObject latestRelease = WebUtil.fetchJSON("https://api.github.com/repos/W-OVERFLOW/" + BetterHurtCam.ID + "/releases/latest").getObject();
                 latestTag = latestRelease.get("tag_name").getAsString();
-                DefaultArtifactVersion currentVersion = new DefaultArtifactVersion(StringUtils.substringBefore(NoHurtCam.VER, "-"));
+                DefaultArtifactVersion currentVersion = new DefaultArtifactVersion(StringUtils.substringBefore(BetterHurtCam.VER, "-"));
                 DefaultArtifactVersion latestVersion = new DefaultArtifactVersion(StringUtils.substringBefore(StringUtils.substringAfter(latestTag, "v"), "-"));
                 if (currentVersion.compareTo(latestVersion) >= 0) {
                     return;
@@ -35,7 +35,7 @@ public class Updater {
                 updateUrl = latestRelease.get("assets").getAsJsonArray().get(0).getAsJsonObject().get("browser_download_url").getAsString();
                 if (!updateUrl.isEmpty()) {
                     if (Config.showUpdate) {
-                        EssentialAPI.getNotifications().push(NoHurtCam.NAME, NoHurtCam.NAME + " has a new update (" + latestTag + ")! Click here to download it automatically!", Updater::openUpdateGui);
+                        EssentialAPI.getNotifications().push(BetterHurtCam.NAME, BetterHurtCam.NAME + " has a new update (" + latestTag + ")! Click here to download it automatically!", Updater::openUpdateGui);
                     }
                     shouldUpdate = true;
                 }
@@ -54,7 +54,7 @@ public class Updater {
         if (file.exists()) return true;
         url = url.replace(" ", "%20");
         try {
-            WebUtil.downloadToFile(url, file, "Hytilities/" + NoHurtCam.VER);
+            WebUtil.downloadToFile(url, file, BetterHurtCam.NAME + "/" + BetterHurtCam.VER);
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -72,11 +72,11 @@ public class Updater {
             try {
                 String runtime = getJavaRuntime();
                 if (Minecraft.isRunningOnMac) {
-                    Desktop.getDesktop().open(NoHurtCam.jarFile.getParentFile());
+                    Desktop.getDesktop().open(BetterHurtCam.jarFile.getParentFile());
                 }
-                File file = new File(NoHurtCam.modDir.getParentFile(), "Deleter-1.2.jar");
+                File file = new File(BetterHurtCam.modDir.getParentFile(), "Deleter-1.2.jar");
                 Runtime.getRuntime()
-                        .exec("\"" + runtime + "\" -jar \"" + file.getAbsolutePath() + "\" \"" + NoHurtCam.jarFile.getAbsolutePath() + "\"");
+                        .exec("\"" + runtime + "\" -jar \"" + file.getAbsolutePath() + "\" \"" + BetterHurtCam.jarFile.getAbsolutePath() + "\"");
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -1,4 +1,4 @@
-package dev.salmon.nohurtcam.utils;
+package dev.salmon.betterhurtcam.utils;
 
 import gg.essential.api.EssentialAPI;
 import net.minecraft.client.Minecraft;
