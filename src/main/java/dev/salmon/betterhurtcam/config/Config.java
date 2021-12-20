@@ -1,8 +1,8 @@
-package dev.salmon.nohurtcam.config;
+package dev.salmon.betterhurtcam.config;
 
-import dev.salmon.nohurtcam.NoHurtCam;
-import dev.salmon.nohurtcam.gui.DownloadGui;
-import dev.salmon.nohurtcam.utils.Updater;
+import dev.salmon.betterhurtcam.BetterHurtCam;
+import dev.salmon.betterhurtcam.gui.DownloadGui;
+import dev.salmon.betterhurtcam.utils.Updater;
 import gg.essential.api.EssentialAPI;
 import gg.essential.vigilance.Vigilant;
 import gg.essential.vigilance.data.Property;
@@ -47,11 +47,11 @@ public class Config extends Vigilant {
         if (Updater.shouldUpdate) EssentialAPI.getGuiUtil()
                 .openScreen(new DownloadGui());
         else EssentialAPI.getNotifications()
-                .push(NoHurtCam.NAME, "No update had been detected at startup, and thus the update GUI has not been shown.");
+                .push(BetterHurtCam.NAME, "No update had been detected at startup, and thus the update GUI has not been shown.");
     }
 
     public Config() {
-        super(new File(NoHurtCam.modDir, "nohurtcam.toml"), NoHurtCam.NAME);
+        super(new File(BetterHurtCam.modDir, "betterhurtcam.toml"), BetterHurtCam.NAME);
         initialize();
     }
 }

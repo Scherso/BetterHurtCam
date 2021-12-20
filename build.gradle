@@ -20,7 +20,7 @@ minecraft {
     replace('@ID@', mod_id)
     mappings = "stable_22"
     makeObfSourceJar = false
-    clientRunArgs += '--mixin mixins.nohurtcam.json'
+    clientRunArgs += '--mixin mixins.betterhurtcam.json'
     clientRunArgs += '--tweakClass gg.essential.loader.stage0.EssentialSetupTweaker'
 }
 
@@ -66,7 +66,7 @@ jar {
     manifest.attributes(
             'ModSide': 'CLIENT',
             'ForceLoadAsMod': true,
-            'MixinConfigs': 'mixins.nohurtcam.json',
+            'MixinConfigs': 'mixins.betterhurtcam.json',
             'TweakClass': 'gg.essential.loader.stage0.EssentialSetupTweaker',
     )
     enabled = false
@@ -109,7 +109,7 @@ shadowJar {
 mixin {
     disableRefMapWarning = true
     defaultObfuscationEnv searge
-    add sourceSets.main, "mixins.nohurtcam.refmap.json"
+    add sourceSets.main, "mixins.betterhurtcam.refmap.json"
 }
 
 reobf {
@@ -121,6 +121,6 @@ reobf {
 tasks.reobfJar.dependsOn tasks.shadowJar
 sourceSets {
     main {
-        ext.refMap = "mixins.nohurtcam.refmap.json"
+        ext.refMap = "mixins.betterhurtcam.refmap.json"
     }
 }

@@ -1,7 +1,7 @@
-package dev.salmon.nohurtcam.gui;
+package dev.salmon.betterhurtcam.gui;
 
-import dev.salmon.nohurtcam.NoHurtCam;
-import dev.salmon.nohurtcam.utils.Updater;
+import dev.salmon.betterhurtcam.BetterHurtCam;
+import dev.salmon.betterhurtcam.utils.Updater;
 import gg.essential.api.EssentialAPI;
 import gg.essential.api.gui.ConfirmationModalBuilder;
 import gg.essential.api.utils.Multithreading;
@@ -24,27 +24,27 @@ public class DownloadGui extends WindowScreen {
     private ConfirmationModalBuilder makeModal() {
         ConfirmationModalBuilder builder = new ConfirmationModalBuilder();
         builder.setText("Are you sure you want to update?");
-        builder.setSecondaryText("(This will update from v" + NoHurtCam.VER + " to " + Updater.latestTag + ")");
+        builder.setSecondaryText("(This will update from v" + BetterHurtCam.VER + " to " + Updater.latestTag + ")");
         builder.setOnConfirm((wyvest) -> {
             restorePreviousScreen();
             Multithreading.runAsync(() -> {
                 if (Updater.download(
                         Updater.updateUrl,
                         new File(
-                                "mods/" + NoHurtCam.NAME + "-" + Updater.latestTag.substring(Updater.latestTag.indexOf("v")) + ".jar"
+                                "mods/" + BetterHurtCam.NAME + "-" + Updater.latestTag.substring(Updater.latestTag.indexOf("v")) + ".jar"
                         )
                 ) && Updater.download(
                         "https://github.com/Wyvest/Deleter/releases/download/v1.2/Deleter-1.2.jar",
-                        new File(NoHurtCam.modDir.getParentFile(), "Deleter-1.2.jar")
+                        new File(BetterHurtCam.modDir.getParentFile(), "Deleter-1.2.jar")
                 )
                 ) {
                     EssentialAPI.getNotifications()
-                            .push(NoHurtCam.NAME, "The ingame updater has successfully installed the newest version.");
+                            .push(BetterHurtCam.NAME, "The ingame updater has successfully installed the newest version.");
                     Updater.addShutdownHook();
                     Updater.shouldUpdate = false;
                 } else {
                     EssentialAPI.getNotifications().push(
-                            NoHurtCam.NAME,
+                            BetterHurtCam.NAME,
                             "The ingame updater has NOT installed the newest version as something went wrong."
                     );
                 }

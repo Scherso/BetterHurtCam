@@ -1,6 +1,6 @@
-package dev.salmon.nohurtcam.mixin;
+package dev.salmon.betterhurtcam.mixin;
 
-import dev.salmon.nohurtcam.NoHurtCam;
+import dev.salmon.betterhurtcam.BetterHurtCam;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.EntityRenderer;
 import net.minecraft.entity.EntityLivingBase;
@@ -18,7 +18,7 @@ public abstract class EntityRendererMixin {
     private void hurtCameraEffect(float partialTicks) {
         if (Minecraft.getMinecraft().getRenderViewEntity() instanceof EntityLivingBase && ((EntityLivingBase)
                 Minecraft.getMinecraft().getRenderViewEntity()).hurtTime > 0) {
-            NoHurtCam.doHurtCam(partialTicks);
+            BetterHurtCam.doHurtCam(partialTicks);
         }
     }
 

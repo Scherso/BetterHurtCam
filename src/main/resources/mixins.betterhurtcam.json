@@ -1,8 +1,8 @@
 {
   "compatibilityLevel": "JAVA_8",
   "minVersion": "0.7",
-  "package": "dev.salmon.nohurtcam.mixin",
-  "refmap": "mixins.nohurtcam.refmap.json",
+  "package": "dev.salmon.betterhurtcam.mixin",
+  "refmap": "mixins.betterhurtcam.refmap.json",
   "mixins": [
     "EntityRendererMixin"
   ],
