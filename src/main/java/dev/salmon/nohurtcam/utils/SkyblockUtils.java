@@ -11,22 +11,10 @@ public class SkyblockUtils {
     public static boolean inSkyblock = false;
     public static int ticks = 0;
 
-    @SubscribeEvent
-    protected void onTick(TickEvent.ClientTickEvent event) {
-        if (event.phase != TickEvent.Phase.START) return;
-        if (ticks % 20 == 0) {
-            if (Minecraft.getMinecraft().thePlayer != null) {
-                checkForSkyblock();
-            }
-            ticks = 0;
-        }
-
-        ticks++;
-    }
-
     /**
      * Taken from Danker's Skyblock Mod under GPL 3.0 license
      * https://github.com/bowser0000/SkyblockMod/blob/master/LICENSE
+     *
      * @author bowser0000
      */
     public static void checkForSkyblock() {
@@ -46,6 +34,7 @@ public class SkyblockUtils {
     /**
      * Taken from Danker's Skyblock Mod under GPL 3.0 license
      * https://github.com/bowser0000/SkyblockMod/blob/master/LICENSE
+     *
      * @author bowser0000
      */
     public static String cleanSB(String scoreboard) {
@@ -59,5 +48,18 @@ public class SkyblockUtils {
         }
 
         return cleaned.toString();
+    }
+
+    @SubscribeEvent
+    protected void onTick(TickEvent.ClientTickEvent event) {
+        if (event.phase != TickEvent.Phase.START) return;
+        if (ticks % 20 == 0) {
+            if (Minecraft.getMinecraft().thePlayer != null) {
+                checkForSkyblock();
+            }
+            ticks = 0;
+        }
+
+        ticks++;
     }
 }
