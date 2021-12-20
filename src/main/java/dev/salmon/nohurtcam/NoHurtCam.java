@@ -17,7 +17,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import java.io.File;
 
 @Mod(name = NoHurtCam.NAME, version = NoHurtCam.VER, modid = NoHurtCam.ID)
-
 public class NoHurtCam {
     public static final String NAME = "@NAME@", VER = "@VER@", ID = "@ID@";
     public static File jarFile;

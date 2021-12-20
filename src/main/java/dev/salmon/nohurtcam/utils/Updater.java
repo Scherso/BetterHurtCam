@@ -44,6 +44,7 @@ public class Updater {
             }
         });
     }
+
     public static Unit openUpdateGui() {
         EssentialAPI.getGuiUtil().openScreen(new DownloadGui());
         return Unit.INSTANCE;
@@ -85,6 +86,7 @@ public class Updater {
 
     /**
      * Gets the current Java runtime being used.
+     *
      * @link https://stackoverflow.com/a/47925649
      */
     public static String getJavaRuntime() throws IOException {
@@ -92,7 +94,7 @@ public class Updater {
         String java = System.getProperty("java.home") + File.separator + "bin" + File.separator +
                 (os != null && os.toLowerCase(Locale.ENGLISH).startsWith("windows") ? "java.exe" : "java");
         if (!new File(java).isFile()) {
-            throw new IOException("Unable to find suitable java runtime at "+java);
+            throw new IOException("Unable to find suitable java runtime at " + java);
         }
         return java;
     }
