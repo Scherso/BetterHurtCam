@@ -11,16 +11,13 @@ import dev.salmon.nohurtcam.NoHurtCam;
 @Mixin(EntityRenderer.class)
 public abstract class EntityRendererMixin {
 
-    @SuppressWarnings("FieldMayBeFinal")
-    private Minecraft mc = Minecraft.getMinecraft();
-
     /**
-     * @author github.com/Scherso with the help of github.com/nxtdaydelivery
+     * @author Scherso (W-OVERFLOW) with the help of github.com/nxtdaydelivery
      */
-    @Overwrite()
+    @Overwrite
     private void hurtCameraEffect(float partialTicks) {
-        if (this.mc.getRenderViewEntity() instanceof EntityLivingBase && ((EntityLivingBase)
-                this.mc.getRenderViewEntity()).hurtTime > 0) {
+        if (Minecraft.getMinecraft().getRenderViewEntity() instanceof EntityLivingBase && ((EntityLivingBase)
+                Minecraft.getMinecraft().getRenderViewEntity()).hurtTime > 0) {
             NoHurtCam.doHurtCam(partialTicks);
         }
     }

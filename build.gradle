@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    include ('gg.essential:loader-launchwrapper:1.1.1') {
+    include ('gg.essential:loader-launchwrapper:1.1.2') {
         transitive = false
     }
     implementation 'gg.essential:essential-1.8.9-forge:1495+release-launch'
