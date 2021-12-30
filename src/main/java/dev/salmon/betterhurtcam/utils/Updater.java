@@ -2,7 +2,7 @@ package dev.salmon.betterhurtcam.utils;
 
 import com.google.gson.JsonObject;
 import dev.salmon.betterhurtcam.BetterHurtCam;
-import dev.salmon.betterhurtcam.config.Config;
+import dev.salmon.betterhurtcam.config.BetterHurtCamConfig;
 import dev.salmon.betterhurtcam.gui.DownloadGui;
 import gg.essential.api.EssentialAPI;
 import gg.essential.api.utils.Multithreading;
@@ -34,7 +34,7 @@ public class Updater {
                 }
                 updateUrl = latestRelease.get("assets").getAsJsonArray().get(0).getAsJsonObject().get("browser_download_url").getAsString();
                 if (!updateUrl.isEmpty()) {
-                    if (Config.showUpdate) {
+                    if (BetterHurtCamConfig.showUpdate) {
                         EssentialAPI.getNotifications().push(BetterHurtCam.NAME, BetterHurtCam.NAME + " has a new update (" + latestTag + ")! Click here to download it automatically!", Updater::openUpdateGui);
                     }
                     shouldUpdate = true;
