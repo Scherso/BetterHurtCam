@@ -10,24 +10,47 @@ import gg.essential.vigilance.data.PropertyType;
 
 import java.io.File;
 
-public class Config extends Vigilant {
+public class BetterHurtCamConfig extends Vigilant {
+
+    public BetterHurtCamConfig() {
+        super(new File(BetterHurtCam.modDir, "betterhurtcam.toml"), BetterHurtCam.NAME);
+        initialize();
+    }
+
+    // Main
 
     @Property(
-            type = PropertyType.NUMBER, name = "Adjust Hurt Camera Effect",
+            type = PropertyType.SLIDER, name = "Adjust Hurt Camera Effect",
             description = "Adjust Minecraft's hurt animation.\nThis will automatically be limited to 6 on non-Skyblock Hypixel gamemodes. The default is 14.",
             category = "General",
+            min = 0,
             max = 100
     )
-    public static int adjustHurtCam = 14;
+    private int adjustHurtCam = 14;
 
     @Property(
-            type = PropertyType.NUMBER, name = "Adjust Hurt Camera Effect in Lava",
+            type = PropertyType.SLIDER,
+            name = "Adjust Hurt Camera Effect in Lava",
             description = "Adjust Minecraft's hurt animation while in lava.\nThis will automatically be limited to 6 on non-Skyblock Hypixel gamemodes. The default is 14.",
             category = "General",
-            subcategory = "Other",
+            subcategory = "Damage Types",
+            min = 0,
             max = 100
     )
-    public static int adjustHurtCamInLava = 14;
+    private int adjustHurtCamInLava = 14;
+
+    @Property(
+            type = PropertyType.SLIDER,
+            name = "Adjust Hurt Camera Effect WWhile Burning",
+            description = "Adjust Minecraft's hurt animation while on fire.\nThis will automatically be limited to 6 on non-Skyblock Hypixel gamemodes. The default is 14.",
+            category = "General",
+            subcategory = "Damage Types",
+            min = 0,
+            max = 100
+    )
+    private int adjustHurtCamIfBurning = 14;
+
+    // Updater
 
     @Property(
             type = PropertyType.SWITCH,
@@ -50,8 +73,17 @@ public class Config extends Vigilant {
                 .push(BetterHurtCam.NAME, "No update had been detected at startup, and thus the update GUI has not been shown.");
     }
 
-    public Config() {
-        super(new File(BetterHurtCam.modDir, "betterhurtcam.toml"), BetterHurtCam.NAME);
-        initialize();
+    // Getters
+
+    public int getAdjustHurtCam() {
+        return adjustHurtCam;
+    }
+
+    public int getAdjustHurtCamInLava() {
+        return adjustHurtCamInLava;
+    }
+
+    public int getAdjustHurtCamIfBurning() {
+        return adjustHurtCamIfBurning;
     }
 }

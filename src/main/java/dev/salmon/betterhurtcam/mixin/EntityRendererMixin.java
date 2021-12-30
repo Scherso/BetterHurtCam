@@ -3,23 +3,25 @@ package dev.salmon.betterhurtcam.mixin;
 import dev.salmon.betterhurtcam.BetterHurtCam;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.EntityRenderer;
-import net.minecraft.entity.EntityLivingBase;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.Constant;
+import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 @Mixin(EntityRenderer.class)
-public abstract class EntityRendererMixin {
+public class EntityRendererMixin {
 
-    /**
-     * @author Scherso (W-OVERFLOW) with the help of github.com/nxtdaydelivery
-     * @reason Reduce, increase, or remove the hurt cam effect.
-     */
-    @Overwrite
-    private void hurtCameraEffect(float partialTicks) {
-        if (Minecraft.getMinecraft().getRenderViewEntity() instanceof EntityLivingBase && ((EntityLivingBase)
-                Minecraft.getMinecraft().getRenderViewEntity()).hurtTime > 0) {
-            BetterHurtCam.doHurtCam(partialTicks);
-        }
+    @Shadow
+    private Minecraft mc = Minecraft.getMinecraft();
+
+    @ModifyConstant(method = "hurtCameraEffect", constant = @Constant(floatValue = 14f))
+    private float multiplyShake(float original) {
+        if (mc.thePlayer.isInLava())
+            return (float)BetterHurtCam.getInstance().getConfig().getAdjustHurtCamInLava();
+        if (mc.thePlayer.isBurning())
+            return (float)BetterHurtCam.getInstance().getConfig().getAdjustHurtCamIfBurning();
+        else
+            return (float)BetterHurtCam.getInstance().getConfig().getAdjustHurtCam();
     }
 
 }

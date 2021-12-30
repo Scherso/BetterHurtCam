@@ -1,6 +1,5 @@
 package dev.salmon.betterhurtcam.command;
 
-
 import dev.salmon.betterhurtcam.BetterHurtCam;
 import gg.essential.api.EssentialAPI;
 import gg.essential.api.commands.Command;
