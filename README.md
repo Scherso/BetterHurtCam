@@ -1,6 +1,8 @@
 # Hurt Animation Remover
 
-A mod which allows the user to adjust Minecraft's hurt animation with a number value.
+A mod which allows the user to adjust Minecraft's hurt animation with a number value. 
+
+Credit to [boom](https://github.com/boomboompower) for the original mod, HurtAnimationRemover.
 
 ## This mod's usage on Hypixel
 
