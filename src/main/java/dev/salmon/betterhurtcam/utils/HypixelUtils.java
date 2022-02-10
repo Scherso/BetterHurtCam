@@ -7,8 +7,9 @@ import net.minecraft.util.StringUtils;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
-public class SkyblockUtils {
+public class HypixelUtils {
     public static boolean inSkyblock = false;
+    public static boolean inHypixel = false;
     public static int ticks = 0;
 
     /**
@@ -56,6 +57,7 @@ public class SkyblockUtils {
         if (ticks % 20 == 0) {
             if (Minecraft.getMinecraft().thePlayer != null) {
                 checkForSkyblock();
+                inHypixel = EssentialAPI.getMinecraftUtil().isHypixel();
             }
             ticks = 0;
         }
