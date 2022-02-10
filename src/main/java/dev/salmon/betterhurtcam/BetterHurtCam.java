@@ -3,7 +3,7 @@ package dev.salmon.betterhurtcam;
 import cc.woverflow.wcore.utils.Updater;
 import dev.salmon.betterhurtcam.command.BetterHurtCamCommand;
 import dev.salmon.betterhurtcam.config.BetterHurtCamConfig;
-import dev.salmon.betterhurtcam.utils.SkyblockUtils;
+import dev.salmon.betterhurtcam.utils.HypixelUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -29,7 +29,7 @@ public class BetterHurtCam {
         new BetterHurtCamCommand().register();
         config = new BetterHurtCamConfig();
         config.preload();
-        MinecraftForge.EVENT_BUS.register(new SkyblockUtils());
+        MinecraftForge.EVENT_BUS.register(new HypixelUtils());
     }
 
 }

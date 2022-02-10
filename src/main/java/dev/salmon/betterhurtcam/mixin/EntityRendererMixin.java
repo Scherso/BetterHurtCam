@@ -1,6 +1,7 @@
 package dev.salmon.betterhurtcam.mixin;
 
 import dev.salmon.betterhurtcam.config.BetterHurtCamConfig;
+import dev.salmon.betterhurtcam.utils.HypixelUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.EntityRenderer;
 import org.spongepowered.asm.mixin.Mixin;
@@ -16,6 +17,16 @@ public class EntityRendererMixin {
 
     @ModifyConstant(method = "hurtCameraEffect", constant = @Constant(floatValue = 14f))
     private float multiplyShake(float original) {
+        float shake = getShake();
+        if (HypixelUtils.inHypixel && !HypixelUtils.inSkyblock) {
+            if (shake < 6) {
+                shake = 6;
+            }
+        }
+        return shake;
+    }
+
+    private float getShake() {
         if (mc.thePlayer.isInLava())
             return (float) BetterHurtCamConfig.adjustHurtCamInLava;
         if (mc.thePlayer.isBurning())
