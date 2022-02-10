@@ -1,6 +1,6 @@
 package dev.salmon.betterhurtcam.mixin;
 
-import dev.salmon.betterhurtcam.BetterHurtCam;
+import dev.salmon.betterhurtcam.config.BetterHurtCamConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.EntityRenderer;
 import org.spongepowered.asm.mixin.Mixin;
@@ -17,11 +17,11 @@ public class EntityRendererMixin {
     @ModifyConstant(method = "hurtCameraEffect", constant = @Constant(floatValue = 14f))
     private float multiplyShake(float original) {
         if (mc.thePlayer.isInLava())
-            return (float)BetterHurtCam.getInstance().getConfig().getAdjustHurtCamInLava();
+            return (float) BetterHurtCamConfig.adjustHurtCamInLava;
         if (mc.thePlayer.isBurning())
-            return (float)BetterHurtCam.getInstance().getConfig().getAdjustHurtCamIfBurning();
+            return (float)BetterHurtCamConfig.adjustHurtCamIfBurning;
         else
-            return (float)BetterHurtCam.getInstance().getConfig().getAdjustHurtCam();
+            return (float)BetterHurtCamConfig.adjustHurtCam;
     }
 
 }
