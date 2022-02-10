@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+ModSide: CLIENT
+MixinConfigs: mixins.betterhurtcam.json
+TweakClass: gg.essential.loader.stage0.EssentialSetupTweaker
+ForceLoadAsMod: true
+

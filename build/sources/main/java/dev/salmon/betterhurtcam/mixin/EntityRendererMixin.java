@@ -32,8 +32,12 @@ public class EntityRendererMixin {
             if (randomNum == 1) shake *= -1;
         }
         if (HypixelUtils.inHypixel && !HypixelUtils.inSkyblock) {
-            if (shake < 6) shake = 6;
-            if (shake > -6) shake = -6;
+            if (shake < 6) {
+                shake = 6;
+            }
+            if (shake > -6) {
+                shake = -6;
+            }
         }
         return shake;
     }
