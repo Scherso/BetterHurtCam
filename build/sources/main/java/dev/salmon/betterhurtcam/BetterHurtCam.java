@@ -13,7 +13,7 @@ import java.io.File;
 
 @Mod(name = BetterHurtCam.NAME, version = BetterHurtCam.VER, modid = BetterHurtCam.ID)
 public class BetterHurtCam {
-    public static final String NAME = "@NAME@", VER = "@VER@", ID = "@ID@";
+    public static final String NAME = "BetterHurtCam", VER = "2.1.3", ID = "betterhurtcam";
     public static File modDir = new File(new File(Minecraft.getMinecraft().mcDataDir, "W-OVERFLOW"), NAME);
     public static BetterHurtCamConfig config;
 

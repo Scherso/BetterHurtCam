@@ -1,0 +1,10 @@
+dev/salmon/betterhurtcam/utils/HypixelUtils.java
+ dev.salmon.betterhurtcam.utils.HypixelUtils
+dev/salmon/betterhurtcam/mixin/EntityRendererMixin.java
+ dev.salmon.betterhurtcam.mixin.EntityRendererMixin
+dev/salmon/betterhurtcam/config/BetterHurtCamConfig.java
+ dev.salmon.betterhurtcam.config.BetterHurtCamConfig
+dev/salmon/betterhurtcam/BetterHurtCam.java
+ dev.salmon.betterhurtcam.BetterHurtCam
+dev/salmon/betterhurtcam/command/BetterHurtCamCommand.java
+ dev.salmon.betterhurtcam.command.BetterHurtCamCommand
