@@ -1,6 +1,6 @@
 package dev.salmon.betterhurtcam;
 
-import cc.woverflow.wcore.utils.Updater;
+import cc.woverflow.onecore.utils.Updater;
 import dev.salmon.betterhurtcam.command.BetterHurtCamCommand;
 import dev.salmon.betterhurtcam.config.BetterHurtCamConfig;
 import dev.salmon.betterhurtcam.utils.HypixelUtils;
