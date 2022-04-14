@@ -76,7 +76,7 @@
 ## Credits
 
 <a href="https://github.com/boomboompower">
-  <img align="left" width="60"
+  <img align="right" width="60"
        src="https://user-images.githubusercontent.com/90007553/163434382-5f0afaed-6f6c-4c4f-93f4-196fea2bb6aa.png"
   />
 </a>
@@ -84,9 +84,9 @@
 
 <h5 align="left">
   
-  Credits to [boomboompower][boomboompower] for the original mod, which allows you to completely cancel the hurt effect. 
-  
-  You can find the original mod [here][hurtanimationremover]
+  > Credits to [boomboompower][boomboompower] for the original mod, which allows you to completely cancel the hurt effect. 
+  >
+  > You can find the original mod [here][hurtanimationremover]
   
 </h5>
 
