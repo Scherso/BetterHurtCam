@@ -12,6 +12,6 @@ public class BetterHurtCamCommand extends Command {
 
     @DefaultHandler
     public void handle() {
-        EssentialAPI.getGuiUtil().openScreen(BetterHurtCam.config.gui());
+        EssentialAPI.getGuiUtil().openScreen(BetterHurtCam.Instance.getConfig().gui());
     }
 }
