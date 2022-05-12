@@ -1,7 +1,7 @@
 package dev.salmon.betterhurtcam;
 
 import dev.salmon.betterhurtcam.command.Command;
-import dev.salmon.betterhurtcam.config.BetterHurtCamConfig;
+import dev.salmon.betterhurtcam.config.Config;
 import net.minecraft.command.ICommand;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.fml.common.Mod;
@@ -15,7 +15,7 @@ public class BetterHurtCam {
 
     @Mod.Instance
     public static BetterHurtCam Instance;
-    private BetterHurtCamConfig config;
+    private Config config;
 
     public static void registerCommands(ICommand... command) {
         Arrays.stream(command).forEachOrdered(ClientCommandHandler.instance::registerCommand);
@@ -23,7 +23,7 @@ public class BetterHurtCam {
 
     @Mod.EventHandler
     protected void onInitialization(FMLInitializationEvent event) {
-        config = new BetterHurtCamConfig();
+        config = new Config();
         config.preload();
 
         registerCommands(
@@ -31,7 +31,7 @@ public class BetterHurtCam {
         );
     }
 
-    public BetterHurtCamConfig getConfig() {
+    public Config getConfig() {
         return config;
     }
 
