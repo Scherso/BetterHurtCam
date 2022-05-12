@@ -34,7 +34,7 @@ loom {
 }
 
 blossom {
-    replaceToken("@VERSION@", projectVersion)
+    replaceToken("@VER@", projectVersion)
     replaceToken("@NAME@", projectName)
     replaceToken("@ID@", projectId)
 }
