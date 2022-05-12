@@ -9,38 +9,47 @@ import java.io.File;
 
 public class BetterHurtCamConfig extends Vigilant {
 
-    // Main
-
+    public BetterHurtCamConfig() {
+        super(new File("./config", BetterHurtCam.ID + ".toml"), BetterHurtCam.NAME);
+    }
     @Property(
             type = PropertyType.SLIDER, name = "Adjust Hurt Camera Effect",
-            description = "Adjust Minecraft's hurt animation.\nThis will automatically be limited to 6 on non-Skyblock Hypixel gamemodes. The default is 14.",
+            description = "Adjust Minecraft's hurt animation.",
             category = "General",
             max = 100
     )
-    public static int adjustHurtCam = 14;
+    private int adjustHurtCam = 14;
 
     @Property(
             type = PropertyType.SLIDER,
             name = "Adjust Hurt Camera Effect in Lava",
-            description = "Adjust Minecraft's hurt animation while in lava.\nThis will automatically be limited to 6 on non-Skyblock Hypixel gamemodes. The default is 14.",
+            description = "Adjust Minecraft's hurt animation while in lava.",
             category = "General",
             subcategory = "Damage Types",
             max = 100
     )
-    public static int adjustHurtCamInLava = 14;
+    private int adjustHurtCamInLava = 14;
 
     @Property(
             type = PropertyType.SLIDER,
             name = "Adjust Hurt Camera Effect WWhile Burning",
-            description = "Adjust Minecraft's hurt animation while on fire.\nThis will automatically be limited to 6 on non-Skyblock Hypixel gamemodes. The default is 14.",
+            description = "Adjust Minecraft's hurt animation while on fire.",
             category = "General",
             subcategory = "Damage Types",
             max = 100
     )
-    public static int adjustHurtCamIfBurning = 14;
+    private int adjustHurtCamIfBurning = 14;
 
-    public BetterHurtCamConfig() {
-        super(new File(BetterHurtCam.modDir, "betterhurtcam.toml"), BetterHurtCam.NAME);
-        initialize();
+    public int getAdjustHurtCam() {
+        return this.adjustHurtCam;
     }
+
+    public int getAdjustHurtCamInLava() {
+        return this.adjustHurtCamInLava;
+    }
+
+    public int getAdjustHurtCamIfBurning() {
+        return this.adjustHurtCamIfBurning;
+    }
+
 }
