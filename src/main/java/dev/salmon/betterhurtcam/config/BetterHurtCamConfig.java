@@ -13,7 +13,8 @@ public class BetterHurtCamConfig extends Vigilant {
         super(new File("./config", BetterHurtCam.ID + ".toml"), BetterHurtCam.NAME);
     }
     @Property(
-            type = PropertyType.SLIDER, name = "Adjust Hurt Camera Effect",
+            type = PropertyType.NUMBER,
+            name = "Adjust Hurt Camera Effect",
             description = "Adjust Minecraft's hurt animation.",
             category = "General",
             max = 100
@@ -21,7 +22,7 @@ public class BetterHurtCamConfig extends Vigilant {
     private int adjustHurtCam = 14;
 
     @Property(
-            type = PropertyType.SLIDER,
+            type = PropertyType.NUMBER,
             name = "Adjust Hurt Camera Effect in Lava",
             description = "Adjust Minecraft's hurt animation while in lava.",
             category = "General",
@@ -31,7 +32,7 @@ public class BetterHurtCamConfig extends Vigilant {
     private int adjustHurtCamInLava = 14;
 
     @Property(
-            type = PropertyType.SLIDER,
+            type = PropertyType.NUMBER,
             name = "Adjust Hurt Camera Effect WWhile Burning",
             description = "Adjust Minecraft's hurt animation while on fire.",
             category = "General",
