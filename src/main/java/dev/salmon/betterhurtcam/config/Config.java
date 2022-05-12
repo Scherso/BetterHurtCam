@@ -7,9 +7,9 @@ import gg.essential.vigilance.data.PropertyType;
 
 import java.io.File;
 
-public class BetterHurtCamConfig extends Vigilant {
+public class Config extends Vigilant {
 
-    public BetterHurtCamConfig() {
+    public Config() {
         super(new File("./config", BetterHurtCam.ID + ".toml"), BetterHurtCam.NAME);
     }
     @Property(
