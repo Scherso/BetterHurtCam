@@ -52,4 +52,10 @@ public class BetterHurtCamConfig extends Vigilant {
         return this.adjustHurtCamIfBurning;
     }
 
+    public void setHurtCam(String hurtCam) {
+        this.adjustHurtCam = Integer.parseInt(hurtCam);
+        this.adjustHurtCamInLava = Integer.parseInt(hurtCam);
+        this.adjustHurtCamIfBurning = Integer.parseInt(hurtCam);
+    }
+
 }
