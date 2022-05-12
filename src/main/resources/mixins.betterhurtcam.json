@@ -6,5 +6,7 @@
   "mixins": [
     "EntityRendererMixin"
   ],
-  "verbose": true
+  "verbose": true,
+  "client": [
+  ]
 }
