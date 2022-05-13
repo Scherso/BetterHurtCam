@@ -11,6 +11,7 @@ public class Config extends Vigilant {
 
     public Config() {
         super(new File("./config", BetterHurtCam.ID + ".toml"), BetterHurtCam.NAME);
+        initialize();
     }
     @Property(
             type = PropertyType.NUMBER,
