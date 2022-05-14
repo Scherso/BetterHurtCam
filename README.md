@@ -12,8 +12,8 @@
 
 ## Installation Guide
 
-1. **Install Minecraft 1.8.9**
-2. **Install the [Forge Loader for 1.8.9][forge]**
+1. **Install Minecraft 1.12.2**
+2. **Install the [Forge Loader for 1.12.2][forge]**
 3. **Install the [latest Better-Hurt-Cam version][releases]**
 4. **Place the mod in your `minecraft/mods` directory**
 
@@ -91,7 +91,7 @@
 </h5>
 
 
-[forge]: https://files.minecraftforge.net/net/minecraftforge/forge/index_1.8.9.html
+[forge]: https://files.minecraftforge.net/net/minecraftforge/forge/index_1.12.2.html
 [releases]: https://github.com/Scherso/BetterHurtCam/releases
 [boomboompower]: https://github.com/boomboompower
 [hurtanimationremover]: https://github.com/boomboompower/HurtAnimationRemover
