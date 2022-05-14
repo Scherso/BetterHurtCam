@@ -12,9 +12,9 @@ public class EntityRendererMixin {
 
     @ModifyConstant(method = "hurtCameraEffect", constant = @Constant(floatValue = 14f))
     private float multiplyShake(float original) {
-        if (Minecraft.getMinecraft().thePlayer.isInLava())
+        if (Minecraft.getMinecraft().player.isInLava())
             return (float) BetterHurtCam.Instance.getConfig().getAdjustHurtCamInLava();
-        if (Minecraft.getMinecraft().thePlayer.isBurning())
+        if (Minecraft.getMinecraft().player.isBurning())
             return (float) BetterHurtCam.Instance.getConfig().getAdjustHurtCamIfBurning();
         else
             return (float) BetterHurtCam.Instance.getConfig().getAdjustHurtCam();

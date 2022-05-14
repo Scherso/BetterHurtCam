@@ -52,17 +52,17 @@ configurations {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.8.9")
-    mappings("de.oceanlabs.mcp:mcp_stable:22-1.8.9")
-    forge("net.minecraftforge:forge:1.8.9-11.15.1.2318-1.8.9")
+    minecraft("com.mojang:minecraft:1.12.2")
+    mappings("de.oceanlabs.mcp:mcp_stable:39-1.12")
+    forge("net.minecraftforge:forge:1.12.2-14.23.5.2768")
     // Spongepowered Mixins
     compileOnly("org.spongepowered:mixin:${spongePoweredMixinVersion}")
     // Essential
     shade ("gg.essential:loader-launchwrapper:${essentialVersion}")
-    compileOnly("gg.essential:essential-1.8.9-forge:1788")
+    compileOnly("gg.essential:essential-1.12.2-forge:1788")
 }
 
-def mcVersion = "1.8.9"
+def mcVersion = "1.12.2"
 processResources {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     inputs.property("version", projectVersion)
