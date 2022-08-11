@@ -34,7 +34,7 @@ public class Config extends Vigilant {
 
     @Property(
             type = PropertyType.NUMBER,
-            name = "Adjust Hurt Camera Effect WWhile Burning",
+            name = "Adjust Hurt Camera Effect While Burning",
             description = "Adjust Minecraft's hurt animation while on fire.",
             category = "General",
             subcategory = "Damage Types",
