@@ -1,38 +1,33 @@
 package dev.salmon.betterhurtcam;
 
-import dev.salmon.betterhurtcam.command.Command;
+import dev.salmon.betterhurtcam.command.BetterHurtCommand;
 import dev.salmon.betterhurtcam.config.Config;
-import net.minecraft.command.ICommand;
-import net.minecraftforge.client.ClientCommandHandler;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
-import java.util.Arrays;
-
 @Mod(name = BetterHurtCam.NAME, version = BetterHurtCam.VER, modid = BetterHurtCam.ID)
-public class BetterHurtCam {
-    public static final String NAME = "@NAME@", VER = "@VER@", ID = "@ID@";
+public class BetterHurtCam
+{
+
+    public static final String NAME = "@NAME@", VER = "@VERSION@", ID = "@ID@";
 
     @Mod.Instance
-    public static BetterHurtCam Instance;
-    private Config config;
+    public static BetterHurtCam INSTANCE;
 
-    public static void registerCommands(ICommand... command) {
-        Arrays.stream(command).forEachOrdered(ClientCommandHandler.instance::registerCommand);
-    }
+    private final Config CONFIG = new Config();
 
     @Mod.EventHandler
-    protected void onInitialization(FMLInitializationEvent event) {
-        config = new Config();
-        config.preload();
-
-        registerCommands(
-                new Command()
-        );
+    protected void onInitialization(FMLInitializationEvent event)
+    {
+        CONFIG.preload();
+        new BetterHurtCommand().register();
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
-    public Config getConfig() {
-        return config;
+    public Config getConfig()
+    {
+        return (this.CONFIG);
     }
 
 }
