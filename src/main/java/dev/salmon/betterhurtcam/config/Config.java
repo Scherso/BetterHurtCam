@@ -4,60 +4,69 @@ import dev.salmon.betterhurtcam.BetterHurtCam;
 import gg.essential.vigilance.Vigilant;
 import gg.essential.vigilance.data.Property;
 import gg.essential.vigilance.data.PropertyType;
+import net.minecraft.client.Minecraft;
 
 import java.io.File;
 
-public class Config extends Vigilant {
+@SuppressWarnings("FieldMayBeFinal")
+public class Config extends Vigilant
+{
 
-    public Config() {
+    public Config()
+    {
         super(new File("./config", BetterHurtCam.ID + ".toml"), BetterHurtCam.NAME);
         initialize();
     }
+
     @Property(
-            type = PropertyType.NUMBER,
+            type = PropertyType.DECIMAL_SLIDER,
             name = "Adjust Hurt Camera Effect",
             description = "Adjust Minecraft's hurt animation.",
             category = "General",
-            max = 100
+            maxF = 100.0F
     )
-    private int adjustHurtCam = 14;
+    private static float animationMultiplier = 14.0F;
+
 
     @Property(
-            type = PropertyType.NUMBER,
+            type = PropertyType.DECIMAL_SLIDER,
             name = "Adjust Hurt Camera Effect in Lava",
             description = "Adjust Minecraft's hurt animation while in lava.",
             category = "General",
             subcategory = "Damage Types",
-            max = 100
+            maxF = 100.0F
     )
-    private int adjustHurtCamInLava = 14;
+    private static float multiplierInLava = 14.0F;
 
     @Property(
-            type = PropertyType.NUMBER,
+            type = PropertyType.DECIMAL_SLIDER,
             name = "Adjust Hurt Camera Effect While Burning",
             description = "Adjust Minecraft's hurt animation while on fire.",
             category = "General",
             subcategory = "Damage Types",
-            max = 100
+            maxF = 100.0F
     )
-    private int adjustHurtCamIfBurning = 14;
+    private static float multiplierIfBurning = 14.0F;
 
-    public int getAdjustHurtCam() {
-        return this.adjustHurtCam;
+    @SuppressWarnings("unused")
+    public static float getAnimationMultiplier()
+    {
+        if (Minecraft.getMinecraft().thePlayer.isInLava())  return (multiplierInLava);
+        if (Minecraft.getMinecraft().thePlayer.isBurning()) return (multiplierIfBurning);
+        return (animationMultiplier);
     }
 
-    public int getAdjustHurtCamInLava() {
-        return this.adjustHurtCamInLava;
+    public void setAnimationMultiplier(float multiplier)
+    {
+        multiplierIfBurning = multiplier;
+        multiplierInLava    = multiplier;
+        animationMultiplier = multiplier;
     }
 
-    public int getAdjustHurtCamIfBurning() {
-        return this.adjustHurtCamIfBurning;
-    }
-
-    public void setHurtCam(String hurtCam) {
-        this.adjustHurtCam = Integer.parseInt(hurtCam);
-        this.adjustHurtCamInLava = Integer.parseInt(hurtCam);
-        this.adjustHurtCamIfBurning = Integer.parseInt(hurtCam);
+    public void forceSaveConfig()
+    {
+        this.markDirty();
+        this.writeData();
     }
 
 }
