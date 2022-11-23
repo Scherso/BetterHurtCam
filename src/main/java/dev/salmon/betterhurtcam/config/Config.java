@@ -48,6 +48,12 @@ public class Config extends Vigilant
     )
     private static float multiplierIfBurning = 14.0F;
 
+    /**
+     * Used in {@link dev.salmon.betterhurtcam.asm.ClassTransformer} to set the effect multiplier, original being 14.0 float.
+     *
+     * @return Multiplier values based on the damage type.
+     * @see dev.salmon.betterhurtcam.asm.ClassTransformer
+     */
     @SuppressWarnings("unused")
     public static float getAnimationMultiplier()
     {
@@ -56,6 +62,12 @@ public class Config extends Vigilant
         return (animationMultiplier);
     }
 
+    /**
+     * Used in {@link dev.salmon.betterhurtcam.command.BetterHurtCommand} to set the effect multiplier in a command.
+     *
+     * @param multiplier user set multiplier value.
+     * @see dev.salmon.betterhurtcam.command.BetterHurtCommand
+     */
     public void setAnimationMultiplier(float multiplier)
     {
         multiplierIfBurning = multiplier;

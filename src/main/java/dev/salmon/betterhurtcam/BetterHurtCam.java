@@ -12,7 +12,7 @@ public class BetterHurtCam
 
     public static final String NAME = "@NAME@", VER = "@VERSION@", ID = "@ID@";
 
-    @Mod.Instance
+    @Mod.Instance(ID)
     public static BetterHurtCam INSTANCE;
 
     private final Config CONFIG = new Config();
