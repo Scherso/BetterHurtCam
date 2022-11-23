@@ -4,9 +4,8 @@ import dev.salmon.betterhurtcam.BetterHurtCam;
 import gg.essential.api.commands.*;
 import gg.essential.api.utils.GuiUtil;
 import gg.essential.universal.ChatColor;
-import net.minecraft.client.Minecraft;
+import gg.essential.universal.UChat;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.util.ChatComponentText;
 
 import java.util.Objects;
 
@@ -35,7 +34,7 @@ public class BetterHurtCommand extends Command
     {
         BetterHurtCam.INSTANCE.getConfig().setAnimationMultiplier(multiplier);
         BetterHurtCam.INSTANCE.getConfig().forceSaveConfig();
-        Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(ChatColor.WHITE + "[" + ChatColor.BLUE + "BetterHurtCam" + ChatColor.WHITE + "] " + ChatColor.GREEN + "Multiplier has been set to " + multiplier + "."));
+        UChat.chat(ChatColor.WHITE + "[" + ChatColor.BLUE + "BetterHurtCam" + ChatColor.WHITE + "] " + ChatColor.GREEN + "Multiplier has been set to " + multiplier + ".");
     }
 
 }

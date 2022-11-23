@@ -1,7 +1,6 @@
 package dev.salmon.betterhurtcam;
 
 import dev.salmon.betterhurtcam.asm.ClassTransformer;
-import net.minecraftforge.common.ForgeVersion;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -9,7 +8,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 
 @IFMLLoadingPlugin.Name("FMLPlugin")
-@IFMLLoadingPlugin.MCVersion(ForgeVersion.mcVersion)
 @IFMLLoadingPlugin.TransformerExclusions({"dev.salmon.betterhurtcam"})
 public class FMLPlugin implements IFMLLoadingPlugin
 {
