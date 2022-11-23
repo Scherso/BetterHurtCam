@@ -41,12 +41,12 @@ public class ClassTransformer implements IClassTransformer
                     {
                         method.instructions.insertBefore(INSN, new MethodInsnNode(
                                 INVOKESTATIC,
-                                "dev/salmon/betterhurtcam/config/Config", /* Owner class being dev.salmon.betterhurtcam.config.Config. */
-                                "getAnimationMultiplier",                        /* Grabbing the return value of Config#getAnimationMultiplier. */
-                                "()F",                                           /* Confirming the class with the descriptor, being ()F, meaning no params and a float return type. */
-                                false                                            /* False argument signifying that this method isn't an interface. */
+                                "dev/salmon/betterhurtcam/config/Config",    /* Owner class being dev.salmon.betterhurtcam.config.Config. */
+                                "getAnimationMultiplier",                           /* Grabbing the return value of Config#getAnimationMultiplier. */
+                                "()F",                                              /* Confirming the class with the descriptor, being ()F, meaning no params and a float return type. */
+                                false                                               /* False argument signifying that this method isn't an interface. */
                         ));
-                        method.instructions.remove(INSN);                        /* Removing previous instruction of 14.0F, being the multiplier. */
+                        method.instructions.remove(INSN);                           /* Removing previous instruction of 14.0F, being the multiplier. */
                     }
                 }
             }
