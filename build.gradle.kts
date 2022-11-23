@@ -21,7 +21,7 @@ version = projectVersion
 group = projectGroup
 
 blossom {
-    replaceToken("@VER@", projectVersion)
+    replaceToken("@VERSION@", projectVersion)
     replaceToken("@NAME@", projectName)
     replaceToken("@ID@", projectId)
 }
