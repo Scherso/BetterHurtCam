@@ -25,6 +25,11 @@ public class BetterHurtCommand extends Command
         GuiUtil.open(Objects.requireNonNull((GuiScreen) BetterHurtCam.INSTANCE.getConfig().gui()));
     }
 
+    /**
+     * Setting the multiplier for the hurt effect with {@link dev.salmon.betterhurtcam.config.Config#setAnimationMultiplier(float)}.
+     *
+     * @param multiplier the multiplier value to set.
+     */
     @SubCommand(value = "set", description = "Set the hurt animation multiplier, Minecraft's default is 14.")
     public void set(@DisplayName("multiplier") int multiplier)
     {

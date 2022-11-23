@@ -58,7 +58,7 @@ public class FMLPlugin implements IFMLLoadingPlugin
     @Override
     public void injectData(Map<String, Object> map)
     {
-
+        /* Hello! */
     }
 
     /**
