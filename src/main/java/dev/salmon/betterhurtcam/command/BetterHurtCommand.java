@@ -1,7 +1,10 @@
 package dev.salmon.betterhurtcam.command;
 
 import dev.salmon.betterhurtcam.BetterHurtCam;
-import gg.essential.api.commands.*;
+import gg.essential.api.commands.Command;
+import gg.essential.api.commands.DefaultHandler;
+import gg.essential.api.commands.DisplayName;
+import gg.essential.api.commands.SubCommand;
 import gg.essential.api.utils.GuiUtil;
 import gg.essential.universal.ChatColor;
 import gg.essential.universal.UChat;

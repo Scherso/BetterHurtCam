@@ -77,7 +77,7 @@ tasks {
 
     named<Jar>("jar") {
         archiveBaseName.set(projectName)
-        duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.EXCLUDE
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
         manifest.attributes.run {
             this["Manifest-Version"] = "1.0"
             this["FMLCorePlugin"] = "dev.salmon.betterhurtcam.FMLPlugin"

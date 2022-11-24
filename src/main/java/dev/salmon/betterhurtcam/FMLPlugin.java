@@ -8,10 +8,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 
 @IFMLLoadingPlugin.Name("FMLPlugin")
-@IFMLLoadingPlugin.TransformerExclusions({"dev.salmon.betterhurtcam"})
+@IFMLLoadingPlugin.TransformerExclusions({"dev.salmon.betterhurtcam.asm"})
 public class FMLPlugin implements IFMLLoadingPlugin
 {
-
 
     /**
      * To return a list of classes that implement ITransformer.
