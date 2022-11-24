@@ -12,12 +12,6 @@ import java.io.File;
 public class Config extends Vigilant
 {
 
-    public Config()
-    {
-        super(new File("./config", BetterHurtCam.ID + ".toml"), BetterHurtCam.NAME);
-        initialize();
-    }
-
     @Property(
             type = PropertyType.DECIMAL_SLIDER,
             name = "Adjust Hurt Camera Effect",
@@ -26,7 +20,6 @@ public class Config extends Vigilant
             maxF = 100.0F
     )
     private static float animationMultiplier = 14.0F;
-
 
     @Property(
             type = PropertyType.DECIMAL_SLIDER,
@@ -47,6 +40,12 @@ public class Config extends Vigilant
             maxF = 100.0F
     )
     private static float multiplierIfBurning = 14.0F;
+
+    public Config()
+    {
+        super(new File("./config", BetterHurtCam.ID + ".toml"), BetterHurtCam.NAME);
+        initialize();
+    }
 
     /**
      * Used in {@link dev.salmon.betterhurtcam.asm.ClassTransformer} to set the effect multiplier, original being 14.0 float.
@@ -71,7 +70,7 @@ public class Config extends Vigilant
     public void setAnimationMultiplier(float multiplier)
     {
         multiplierIfBurning = multiplier;
-        multiplierInLava    = multiplier;
+        multiplierInLava = multiplier;
         animationMultiplier = multiplier;
     }
 

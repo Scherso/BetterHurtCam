@@ -6,7 +6,11 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
-@Mod(name = BetterHurtCam.NAME, version = BetterHurtCam.VER, modid = BetterHurtCam.ID)
+@Mod(
+        name = BetterHurtCam.NAME,
+        version = BetterHurtCam.VER,
+        modid = BetterHurtCam.ID
+)
 public class BetterHurtCam
 {
 
