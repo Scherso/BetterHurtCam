@@ -15,6 +15,9 @@ public class ClassTransformer implements IClassTransformer
 
     /**
      * Grabs value {@link Config#getAnimationMultiplier()} and replaces the original value of 14.0F with the user set value.
+     * </n>
+     * FOR REFERENCE:
+     * {@link InsnList#set(AbstractInsnNode, AbstractInsnNode)} Replaces an instruction of this list with another instruction.
      *
      * @param name            name of the class being transformed.
      * @param transformedName name of the class being transformed.
@@ -40,14 +43,13 @@ public class ClassTransformer implements IClassTransformer
                 for (final AbstractInsnNode INSN : method.instructions.toArray()) {
                     if (INSN.getOpcode() == LDC && ((LdcInsnNode) INSN).cst.equals(14.0F))
                     {
-                        method.instructions.insertBefore(INSN, new MethodInsnNode(
+                        method.instructions.set(INSN, new MethodInsnNode(
                                 INVOKESTATIC,
                                 "dev/salmon/betterhurtcam/config/Config",   /* Owner class being dev.salmon.betterhurtcam.config.Config. */
                                 "getAnimationMultiplier",                   /* Grabbing the return value of Config#getAnimationMultiplier. */
                                 "()F",                                      /* Confirming the class with the descriptor, being ()F, meaning no params and a float return type. */
                                 false                                       /* False argument signifying that this method isn't an interface. */
                         ));
-                        method.instructions.remove(INSN);                   /* Removing previous instruction of 14.0F, being the multiplier. */
                     }
                 }
             }
