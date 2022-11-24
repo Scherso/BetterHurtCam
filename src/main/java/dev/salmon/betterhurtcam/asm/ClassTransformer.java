@@ -14,10 +14,16 @@ public class ClassTransformer implements IClassTransformer
 {
 
     /**
-     * Grabs value {@link Config#getAnimationMultiplier()} and replaces the original value of 14.0F with the user set value.
-     * </n>
+     * <pre>
+     * Grabs value {@link Config#getAnimationMultiplier()} and replaces the original
+     * value of 14.0F with the user set value.
+     *
      * FOR REFERENCE:
-     * {@link InsnList#set(AbstractInsnNode, AbstractInsnNode)} Replaces an instruction of this list with another instruction.
+     * {@link InsnList#set(AbstractInsnNode, AbstractInsnNode)} Replaces an instruction
+     * of this list with another instruction.
+     * {@link org.objectweb.asm.Opcodes#LDC} Pushes a constant from the pool onto the
+     * stack.
+     * </pre>
      *
      * @param name            name of the class being transformed.
      * @param transformedName name of the class being transformed.
@@ -39,8 +45,9 @@ public class ClassTransformer implements IClassTransformer
         {
             String methodName = FMLDeobfuscatingRemapper.INSTANCE.mapMethodName(NODE.name, method.name, method.desc);
             if (methodName.equals("hurtCameraEffect") || methodName.equals("func_78482_e"))
-            {                     /* mapped name */                     /* unmapped name */
-                for (final AbstractInsnNode INSN : method.instructions.toArray()) {
+            {   /* func_78482_e, being the unmapped name, is checked for users that are not in a dev environment. */
+                for (final AbstractInsnNode INSN : method.instructions.toArray())
+                {
                     if (INSN.getOpcode() == LDC && ((LdcInsnNode) INSN).cst.equals(14.0F))
                     {
                         method.instructions.set(INSN, new MethodInsnNode(
