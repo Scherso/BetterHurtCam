@@ -70,7 +70,7 @@ public class Config extends Vigilant
     public void setAnimationMultiplier(float multiplier)
     {
         multiplierIfBurning = multiplier;
-        multiplierInLava = multiplier;
+        multiplierInLava    = multiplier;
         animationMultiplier = multiplier;
     }
 
