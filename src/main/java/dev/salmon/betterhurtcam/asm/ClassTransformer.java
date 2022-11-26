@@ -15,14 +15,15 @@ public class ClassTransformer implements IClassTransformer
 
     /**
      * <pre>
-     * Grabs value {@link Config#getAnimationMultiplier()} and replaces the original
-     * value of 14.0F with the user set value.
+     *     Grabs value {@link Config#getAnimationMultiplier()} and replaces the original
+     *     value of 14.0F with the user set value.
      *
-     * FOR REFERENCE:
-     * {@link InsnList#set(AbstractInsnNode, AbstractInsnNode)} Replaces an instruction
-     * of this list with another instruction.
-     * {@link org.objectweb.asm.Opcodes#LDC} Pushes a constant from the pool onto the
-     * stack.
+     *     FOR REFERENCE:
+     *     {@link InsnList#set(AbstractInsnNode, AbstractInsnNode)} Replaces an instruction
+     *     of this list with another instruction.
+     *     {@link org.objectweb.asm.Opcodes#LDC} Pushes a constant from the pool onto the
+     *     stack.
+     *     {@link net.minecraft.client.renderer.EntityRenderer} Class being transformed.
      * </pre>
      *
      * @param name            name of the class being transformed.
@@ -38,14 +39,14 @@ public class ClassTransformer implements IClassTransformer
         if (!transformedName.equals("net.minecraft.client.renderer.EntityRenderer")) return bytes;
 
         final ClassReader READER = new ClassReader(bytes);
-        final ClassNode NODE = new ClassNode();
+        final ClassNode   NODE   = new ClassNode();
         READER.accept(NODE, 0);
 
         for (MethodNode method : NODE.methods)
         {
             String methodName = FMLDeobfuscatingRemapper.INSTANCE.mapMethodName(NODE.name, method.name, method.desc);
             if (methodName.equals("hurtCameraEffect") || methodName.equals("func_78482_e"))
-            {   /* func_78482_e, being the unmapped name, is checked for users that are not in a dev environment. */
+            {
                 for (final AbstractInsnNode INSN : method.instructions.toArray())
                 {
                     if (INSN.getOpcode() == LDC && ((LdcInsnNode) INSN).cst.equals(14.0F))
