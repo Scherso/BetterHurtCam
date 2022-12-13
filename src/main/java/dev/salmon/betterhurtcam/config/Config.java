@@ -48,7 +48,8 @@ public class Config extends Vigilant
     }
 
     /**
-     * Used in {@link dev.salmon.betterhurtcam.asm.ClassTransformer} to set the effect multiplier, original being 14.0 float.
+     * Used in {@link dev.salmon.betterhurtcam.asm.ClassTransformer} to set the effect multiplier, original being 14.0
+     * float.
      *
      * @return Multiplier values based on the damage type.
      * @see dev.salmon.betterhurtcam.asm.ClassTransformer
@@ -70,7 +71,7 @@ public class Config extends Vigilant
     public void setAnimationMultiplier(float multiplier)
     {
         multiplierIfBurning = multiplier;
-        multiplierInLava    = multiplier;
+        multiplierInLava = multiplier;
         animationMultiplier = multiplier;
     }
 

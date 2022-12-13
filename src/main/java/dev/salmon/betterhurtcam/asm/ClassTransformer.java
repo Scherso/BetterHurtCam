@@ -36,7 +36,7 @@ public class ClassTransformer implements IClassTransformer
     @Override
     public byte[] transform(String name, String transformedName, byte[] bytes)
     {
-        if (!transformedName.equals("net.minecraft.client.renderer.EntityRenderer")) return bytes;
+        if (!transformedName.equals("net.minecraft.client.renderer.EntityRenderer")) return (bytes);
 
         final ClassReader READER = new ClassReader(bytes);
         final ClassNode   NODE   = new ClassNode();
@@ -65,7 +65,7 @@ public class ClassTransformer implements IClassTransformer
 
         final ClassWriter WRITER = new ClassWriter(READER, 0);
         NODE.accept(WRITER);
-        return WRITER.toByteArray();
+        return (WRITER.toByteArray());
     }
 
 }

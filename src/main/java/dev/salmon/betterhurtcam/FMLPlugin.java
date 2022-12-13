@@ -21,7 +21,7 @@ public class FMLPlugin implements IFMLLoadingPlugin
     @Override
     public final String[] getASMTransformerClass()
     {
-        return (new String[]{ClassTransformer.class.getName()});
+        return (new String[] {ClassTransformer.class.getName()});
     }
 
     /**

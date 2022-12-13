@@ -28,7 +28,8 @@ public class BetterHurtCommand extends Command
     }
 
     /**
-     * Setting the multiplier for the hurt effect with {@link dev.salmon.betterhurtcam.config.Config#setAnimationMultiplier(float)}.
+     * Setting the multiplier for the hurt effect with
+     * {@link dev.salmon.betterhurtcam.config.Config#setAnimationMultiplier(float)}.
      *
      * @param multiplier the multiplier value to set.
      */
