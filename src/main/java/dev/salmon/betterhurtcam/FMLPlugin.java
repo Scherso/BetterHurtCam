@@ -19,7 +19,7 @@ public class FMLPlugin implements IFMLLoadingPlugin
      */
     @NotNull
     @Override
-    public String[] getASMTransformerClass()
+    public final String[] getASMTransformerClass()
     {
         return (new String[]{ClassTransformer.class.getName()});
     }
@@ -31,7 +31,7 @@ public class FMLPlugin implements IFMLLoadingPlugin
      */
     @Nullable
     @Override
-    public String getModContainerClass()
+    public final String getModContainerClass()
     {
         return (null);
     }
@@ -43,7 +43,7 @@ public class FMLPlugin implements IFMLLoadingPlugin
      */
     @Nullable
     @Override
-    public String getSetupClass()
+    public final String getSetupClass()
     {
         return (null);
     }
@@ -65,7 +65,7 @@ public class FMLPlugin implements IFMLLoadingPlugin
      */
     @Nullable
     @Override
-    public String getAccessTransformerClass()
+    public final String getAccessTransformerClass()
     {
         return (null);
     }
