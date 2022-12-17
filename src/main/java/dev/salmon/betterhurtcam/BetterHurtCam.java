@@ -36,7 +36,7 @@ public class BetterHurtCam
 	public void preInitialization(FMLPreInitializationEvent event)
 	{
 		ModMetadata data = event.getModMetadata();
-		data.name = "Better" + ChatColor.RED + "Hurt" + ChatColor.RED + "Cam" + ChatColor.RESET;
+		data.name = "Better" + ChatColor.RED + "Hurt" + ChatColor.WHITE + "Cam" + ChatColor.RESET;
 		data.description = "A mod that allows the player to adjust the " + ChatColor.RED + "hurt" + ChatColor.RESET + " animation upon being damaged in " + ChatColor.GREEN + "Minecraft" + ChatColor.RESET + ".";
 	}
 
