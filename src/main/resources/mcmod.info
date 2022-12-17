@@ -1,18 +1,16 @@
 [
-  {
-    "modid": "${id}",
-    "name": "${name}",
-    "description": "This mod allows the player to adjust the hurt animation upon being hit in Minecraft.",
-    "version": "${version}",
-    "mcversion": "${mcversion}",
-    "url": "https://github.com/Scherso/BetterHurtCam",
-    "updateUrl": "",
-    "authorList": [
-      "Scherso"
-    ],
-    "credits": "boomboompower",
-    "logoFile": "",
-    "screenshots": [],
-    "dependencies": []
-  }
+    {
+        "modid": "${id}",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "url": "https://github.com/Scherso/BetterHurtCam",
+        "updateUrl": "",
+        "authorList": [
+            "Scherso"
+        ],
+        "credits": "boomboompower",
+        "logoFile": "",
+        "screenshots": [],
+        "dependencies": []
+    }
 ]
